@@ -1,0 +1,6 @@
+/home/ruhsi/workspaces/openshift-test/second/src/main/java/at/liwest/configmap/config/rest/model/Address.java
+/home/ruhsi/workspaces/openshift-test/second/src/main/java/at/liwest/configmap/config/configuration/ConfigSource.java
+/home/ruhsi/workspaces/openshift-test/second/src/main/java/at/liwest/configmap/config/rest/api/AddressRest.java
+/home/ruhsi/workspaces/openshift-test/second/src/main/java/at/liwest/configmap/config/rest/impl/AddressRestImpl.java
+/home/ruhsi/workspaces/openshift-test/second/src/main/java/at/liwest/configmap/config/configuration/RestApplication.java
+/home/ruhsi/workspaces/openshift-test/second/src/main/java/at/liwest/configmap/config/rest/provider/CorsResponseFilter.java
