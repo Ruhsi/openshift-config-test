@@ -72,10 +72,10 @@ objects:
               # On dedicated nodes we get 'insufficent cpu'
               resources:
                 requests:
-                  memory: "128Mi"
-                  cpu: "100m"
+                  memory: "8Gi"
+                  cpu: "500m"
                 limits:
-                  memory: "512Mi"
+                  memory: "8Gi"
                   cpu: "500m"
               terminationMessagePath: "/dev/termination.log"
               capabilities:
