@@ -1,10 +1,10 @@
 kind: "Template"
 apiVersion: "v1"
 metadata:
-  name: "SwaggerUI"
+  name: "ConfigTest"
   annotations:
-    openshift.io/display-name: "SwaggerUI"
-    description: "SwaggerUI instance"
+    openshift.io/display-name: "ConfigTest"
+    description: "ConfigTest instance"
 
 parameters:
   - name: "SERVICE_NAME"
