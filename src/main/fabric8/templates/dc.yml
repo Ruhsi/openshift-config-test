@@ -52,9 +52,9 @@ objects:
               readinessProbe:
                 successThreshold: 1
                 failureThreshold: 5
-                timeoutSeconds: 5
+                timeoutSeconds: 50
                 initialDelaySeconds: 10
-                periodSeconds: 10
+                periodSeconds: 100
                 httpGet:
                   path: /
                   port: 8080
@@ -62,9 +62,9 @@ objects:
               livenessProbe:
                 successThreshold: 1
                 failureThreshold: 2
-                timeoutSeconds: 5
+                timeoutSeconds: 50
                 initialDelaySeconds: 10
-                periodSeconds: 10
+                periodSeconds: 100
                 httpGet:
                   path: /
                   port: 8080
