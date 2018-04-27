@@ -37,7 +37,7 @@ objects:
         git:
           uri: "${GIT_URL}"
           ref: "${GIT_REF}"
-        contextDir: "fabric8/docker"
+        contextDir: "src/main/fabric8/docker"
       strategy:
         type: "Docker"
         dockerStrategy:
