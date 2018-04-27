@@ -1,0 +1,33 @@
+kind: "Template"
+apiVersion: "v1"
+metadata:
+  name: "SwaggerUI"
+  annotations:
+    openshift.io/display-name: "SwaggerUI"
+    description: "SwaggerUI instance"
+
+parameters:
+  - name: "SERVICE_NAME"
+    displayName: "Service name"
+    description: "The name of the related service"
+    required: true
+
+  - name: "HOST_NAME"
+    displayName: "Hostname"
+    description: "The route host name"
+
+objects:
+  - kind: Route
+    apiVersion: v1
+    id: ${SERVICE_NAME}
+    metadata:
+      annotations:
+        description: Route for application's http service.
+      labels:
+        app: ${SERVICE_NAME}
+      name: ${SERVICE_NAME}
+    spec:
+      host: "${HOST_NAME}"
+      to:
+        kind: "Service"
+        name: "${SERVICE_NAME}"

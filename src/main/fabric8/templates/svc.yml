@@ -1,0 +1,31 @@
+kind: "Template"
+apiVersion: "v1"
+metadata:
+  name: "ConfigTest"
+  annotations:
+    openshift.io/display-name: "ConfigTest"
+    description: "ConfigTest instance"
+
+parameters:
+  - name: "SERVICE_NAME"
+    displayName: "Service name"
+    description: "The name of the related service"
+    required: true
+
+objects:
+  - kind: "Service"
+    apiVersion: "v1"
+    metadata:
+      name: "${SERVICE_NAME}"
+      labels:
+        app: "${SERVICE_NAME}"
+    spec:
+      ports:
+        - name: "${SERVICE_NAME}"
+          protocol: "TCP"
+          port: 80
+          targetPort: 8080
+      selector:
+        name:  "${SERVICE_NAME}"
+      type: "ClusterIP"
+      sessionAffinity: "None"

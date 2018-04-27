@@ -1,0 +1,84 @@
+kind: "Template"
+apiVersion: "v1"
+metadata:
+  name: "ConfigTest"
+  annotations:
+    openshift.io/display-name: "ConfigTest"
+    description: "ConfigTest instance"
+
+parameters:
+  - name: "SERVICE_NAME"
+    displayName: "Service name"
+    description: "The name of the related service"
+    required: true
+
+objects:
+  - kind: "DeploymentConfig"
+    apiVersion: "v1"
+    metadata:
+      name: "${SERVICE_NAME}"
+      annotations:
+        template.alpha.openshift.io/wait-for-ready: "true"
+      labels:
+        app: "${SERVICE_NAME}"
+    spec:
+      strategy:
+        type: "Recreate"
+      replicas: "1"
+      selector:
+        name: "${SERVICE_NAME}"
+      triggers:
+        - type: "ConfigChange"
+        - type: "ImageChange"
+          imageChangeParams:
+            automatic: true
+            containerNames:
+              - "${SERVICE_NAME}"
+            from:
+              kind: "ImageStreamTag"
+              name: "${SERVICE_NAME}:latest"
+      template:
+        metadata:
+          labels:
+            name: "${SERVICE_NAME}"
+        spec:
+          containers:
+            - name: "${SERVICE_NAME}"
+              image: " "
+              imagePullPolicy: Always
+              ports:
+                - containerPort: 8080
+                  protocol: TCP
+              readinessProbe:
+                successThreshold: 1
+                failureThreshold: 5
+                timeoutSeconds: 5
+                initialDelaySeconds: 10
+                periodSeconds: 10
+                httpGet:
+                  path: /
+                  port: 8080
+                  scheme: HTTP
+              livenessProbe:
+                successThreshold: 1
+                failureThreshold: 2
+                timeoutSeconds: 5
+                initialDelaySeconds: 10
+                periodSeconds: 10
+                httpGet:
+                  path: /
+                  port: 8080
+                  scheme: HTTP
+              # On dedicated nodes we get 'insufficent cpu'
+              resources:
+                requests:
+                  memory: "128Mi"
+                  cpu: "100m"
+                limits:
+                  memory: "512Mi"
+                  cpu: "500m"
+              terminationMessagePath: "/dev/termination.log"
+              capabilities:
+                securityContext:
+                  capabilities:
+                    privileged: false

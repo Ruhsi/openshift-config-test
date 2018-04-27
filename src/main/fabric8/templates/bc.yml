@@ -1,0 +1,56 @@
+kind: "Template"
+apiVersion: "v1"
+metadata:
+  name: "config-test"
+  annotations:
+    openshift.io/display-name: "ConfigTest"
+    description: "ConfigTest instance"
+
+parameters:
+  - name: "SERVICE_NAME"
+    displayName: "Service name"
+    description: "The name of the related service"
+    required: true
+
+  - name: "GIT_URL"
+    displayName: "Git url"
+    description: "The http git repository url for building the service"
+    required: true
+
+  - name: "GIT_REF"
+    displayName: "Git ref"
+    description: "The git repository ref for building the service"
+    required: true
+
+
+objects:
+  - kind: "BuildConfig"
+    apiVersion: "v1"
+    metadata:
+      name: "${SERVICE_NAME}"
+      labels:
+        name: "${SERVICE_NAME}"
+        app: "${SERVICE_NAME}"
+    spec:
+      source:
+        type: "Git"
+        git:
+          uri: "${GIT_URL}"
+          ref: "${GIT_REF}"
+        contextDir: "fabric8/docker"
+      strategy:
+        type: "Docker"
+        dockerStrategy:
+          env:
+            - name: "BUILD_LOGLEVEL"
+              value: "5"
+            - name: "VERSION"
+              value: "${VERSION}"
+      output:
+        to:
+          kind: "ImageStreamTag"
+          name: "${SERVICE_NAME}:latest"
+          labels:
+            app: "${SERVICE_NAME}"
+      triggers:
+        - type: "ConfigChange"
