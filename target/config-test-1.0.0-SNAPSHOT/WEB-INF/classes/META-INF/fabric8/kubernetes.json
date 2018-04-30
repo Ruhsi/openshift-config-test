@@ -23,7 +23,7 @@
     "kind" : "Service",
     "metadata" : {
       "annotations" : {
-        "fabric8.io/git-commit" : "4cee636bebec017f54d01e8f540c5e7916195c3e",
+        "fabric8.io/git-commit" : "766323f47ab0a7e31c476e10d4b3bced9507e0a2",
         "fabric8.io/iconUrl" : "img/icons/wildfly.svg",
         "fabric8.io/git-branch" : "master",
         "prometheus.io/scrape" : "true",
@@ -71,7 +71,7 @@
     "kind" : "Deployment",
     "metadata" : {
       "annotations" : {
-        "fabric8.io/git-commit" : "4cee636bebec017f54d01e8f540c5e7916195c3e",
+        "fabric8.io/git-commit" : "766323f47ab0a7e31c476e10d4b3bced9507e0a2",
         "fabric8.io/iconUrl" : "img/icons/wildfly.svg",
         "fabric8.io/git-branch" : "master",
         "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=config-test&var-version=1.0.0-SNAPSHOT"
@@ -97,7 +97,7 @@
       "template" : {
         "metadata" : {
           "annotations" : {
-            "fabric8.io/git-commit" : "4cee636bebec017f54d01e8f540c5e7916195c3e",
+            "fabric8.io/git-commit" : "766323f47ab0a7e31c476e10d4b3bced9507e0a2",
             "fabric8.io/iconUrl" : "img/icons/wildfly.svg",
             "fabric8.io/git-branch" : "master",
             "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=config-test&var-version=1.0.0-SNAPSHOT"
