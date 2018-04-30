@@ -15,18 +15,18 @@ public class AddressRestImpl implements AddressRest {
 	@ConfigProperty(name = "incognito.config.zipcode")
 	private String zipCode;
 	
-	@Inject 
-	@ConfigProperty(name = "incognito.config.username")
-	private String username;
+//	@Inject 
+//	@ConfigProperty(name = "incognito.config.username")
+//	private String username;
 
 	@Override
 	public Address getAddress() {
 		return new Address(zipCode, "Industriezeile 34", "Linz");
 	}
 	
-	@Override
-	public String getUsername() {
-		return this.username;
-	}
+//	@Override
+//	public String getUsername() {
+//		return this.username;
+//	}
 
 }

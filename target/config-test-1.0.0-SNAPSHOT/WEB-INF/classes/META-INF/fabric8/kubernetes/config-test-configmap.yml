@@ -10,4 +10,4 @@ metadata:
   name: config-test
 data:
   config.properties: |
-    incognito.config.zipcode=900
+    incognito.config.zipcode=${zip}
