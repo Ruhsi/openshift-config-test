@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: List
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    name: config-test
+  spec:
+    tags:
+    - from:
+        kind: ImageStreamImage
+        name: config-test@sha256:dea7fb31351d2707cfe86cf837e2e072e05d1e536cc632bdab1308377d689d16
+        namespace: config
+      name: latest

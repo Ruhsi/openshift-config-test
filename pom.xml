@@ -4,12 +4,12 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>at.liwest.esb.incognito</groupId>
-    <artifactId>liwestfsw-incognito-ssh</artifactId>
+    <groupId>at.liwest.esb.config-test</groupId>
+    <artifactId>config-test</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>liwestfsw-incognito-ssh</name>
+    <name>config-test</name>
 
     <properties>
         <!-- Build Properties -->
@@ -29,7 +29,7 @@
         <org.apache.common-exec.version>1.3</org.apache.common-exec.version>
 
         <!-- Plugin versions -->
-        <fabric8.maven.plugin.version>3.5.38</fabric8.maven.plugin.version>
+        <fabric8.maven.plugin.version>3.5.37</fabric8.maven.plugin.version>
         <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
         <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>

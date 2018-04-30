@@ -14,4 +14,9 @@ public interface AddressRest {
 	@Path("address")
 	@Produces("application/json")
 	Address getAddress();
+	
+	@GET
+	@Path("username")
+	@Produces("application/json")
+	String getUsername();
 }

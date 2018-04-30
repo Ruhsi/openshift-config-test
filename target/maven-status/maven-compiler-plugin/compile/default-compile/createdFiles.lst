@@ -1,0 +1,6 @@
+at/liwest/configmap/config/configuration/ConfigSource.class
+at/liwest/configmap/config/rest/model/Address.class
+at/liwest/configmap/config/rest/impl/AddressRestImpl.class
+at/liwest/configmap/config/rest/api/AddressRest.class
+at/liwest/configmap/config/configuration/RestApplication.class
+at/liwest/configmap/config/rest/provider/CorsResponseFilter.class
