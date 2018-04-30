@@ -19,7 +19,7 @@ items:
   kind: Service
   metadata:
     annotations:
-      fabric8.io/git-commit: 3ccc7edcf96e6afd71d240fcd2a535fb9e95487f
+      fabric8.io/git-commit: 4188e4448825e3aa532fc50d6aed93e68f7376c5
       fabric8.io/iconUrl: img/icons/wildfly.svg
       fabric8.io/git-branch: master
       prometheus.io/scrape: "true"
@@ -57,7 +57,7 @@ items:
   kind: Deployment
   metadata:
     annotations:
-      fabric8.io/git-commit: 3ccc7edcf96e6afd71d240fcd2a535fb9e95487f
+      fabric8.io/git-commit: 4188e4448825e3aa532fc50d6aed93e68f7376c5
       fabric8.io/iconUrl: img/icons/wildfly.svg
       fabric8.io/git-branch: master
       fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=config-test&var-version=1.0.0-SNAPSHOT
@@ -78,7 +78,7 @@ items:
     template:
       metadata:
         annotations:
-          fabric8.io/git-commit: 3ccc7edcf96e6afd71d240fcd2a535fb9e95487f
+          fabric8.io/git-commit: 4188e4448825e3aa532fc50d6aed93e68f7376c5
           fabric8.io/iconUrl: img/icons/wildfly.svg
           fabric8.io/git-branch: master
           fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=config-test&var-version=1.0.0-SNAPSHOT
