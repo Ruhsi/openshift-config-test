@@ -10,6 +10,6 @@ items:
     tags:
     - from:
         kind: ImageStreamImage
-        name: config-test@sha256:9de44799a56a1abf987b67c1d1b24e5ae22f452a2b4cdaf7b3a5d64cc061771e
+        name: config-test@sha256:8cddfcd190b32747aba915646bf25ab5a950bcfe7f9b5c669ab320a49a648fcd
         namespace: config
       name: latest
