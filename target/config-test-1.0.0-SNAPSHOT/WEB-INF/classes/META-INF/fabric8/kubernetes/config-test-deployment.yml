@@ -3,7 +3,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   annotations:
-    fabric8.io/git-commit: c55ff969258cb0d694622abc7fbb5adce4312d7e
+    fabric8.io/git-commit: 61e642a899721d6d939f5801f71d608751184d6b
     fabric8.io/iconUrl: img/icons/wildfly.svg
     fabric8.io/git-branch: master
     fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=config-test&var-version=1.0.0-SNAPSHOT
@@ -24,7 +24,7 @@ spec:
   template:
     metadata:
       annotations:
-        fabric8.io/git-commit: c55ff969258cb0d694622abc7fbb5adce4312d7e
+        fabric8.io/git-commit: 61e642a899721d6d939f5801f71d608751184d6b
         fabric8.io/iconUrl: img/icons/wildfly.svg
         fabric8.io/git-branch: master
         fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=config-test&var-version=1.0.0-SNAPSHOT
