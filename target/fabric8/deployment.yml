@@ -10,7 +10,6 @@ spec:
                 path: config.properties
       containers:
         - name: config-test
-          command: [ "/bin/sh", "-c", "env" ]
           resources:
             requests:
               cpu: "0.2"

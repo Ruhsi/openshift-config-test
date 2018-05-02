@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    fabric8.io/git-commit: 2084c4588e38d161e5268ed97cc92a87dc0c5d7c
+    fabric8.io/git-commit: 124dbebc7050546b7b8c9198c0322209f11c1352
     fabric8.io/iconUrl: img/icons/wildfly.svg
     fabric8.io/git-branch: master
     prometheus.io/scrape: "true"

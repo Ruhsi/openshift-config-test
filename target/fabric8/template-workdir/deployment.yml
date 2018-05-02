@@ -10,7 +10,6 @@ spec:
                 path: config.properties
       containers:
         - name: ${project.artifactId}
-          command: [ "/bin/sh", "-c", "env" ]
           resources:
             requests:
               cpu: "0.2"

@@ -19,7 +19,7 @@ items:
   kind: Service
   metadata:
     annotations:
-      fabric8.io/git-commit: 2084c4588e38d161e5268ed97cc92a87dc0c5d7c
+      fabric8.io/git-commit: 124dbebc7050546b7b8c9198c0322209f11c1352
       fabric8.io/iconUrl: img/icons/wildfly.svg
       fabric8.io/git-branch: master
       prometheus.io/scrape: "true"
@@ -57,7 +57,7 @@ items:
   kind: DeploymentConfig
   metadata:
     annotations:
-      fabric8.io/git-commit: 2084c4588e38d161e5268ed97cc92a87dc0c5d7c
+      fabric8.io/git-commit: 124dbebc7050546b7b8c9198c0322209f11c1352
       fabric8.io/iconUrl: img/icons/wildfly.svg
       fabric8.io/git-branch: master
       fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=config-test&var-version=1.0.0-SNAPSHOT
@@ -81,7 +81,7 @@ items:
     template:
       metadata:
         annotations:
-          fabric8.io/git-commit: 2084c4588e38d161e5268ed97cc92a87dc0c5d7c
+          fabric8.io/git-commit: 124dbebc7050546b7b8c9198c0322209f11c1352
           fabric8.io/iconUrl: img/icons/wildfly.svg
           fabric8.io/git-branch: master
           fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=config-test&var-version=1.0.0-SNAPSHOT
@@ -92,11 +92,7 @@ items:
           group: at.liwest.esb.config-test
       spec:
         containers:
-        - command:
-          - /bin/sh
-          - -c
-          - env
-          env:
+        - env:
           - name: SPECIAL_KEY
             valueFrom:
               configMapKeyRef:
