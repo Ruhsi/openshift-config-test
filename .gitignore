@@ -1,0 +1,11 @@
+.idea/
+bin/
+target/
+.directory
+.project
+.classpath
+.settings
+*.log
+.xml
+*.diagram
+.attach_pid*
