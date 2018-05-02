@@ -12,36 +12,35 @@ parameters:
     description: "param"
     required: true
 
-objects:
-  spec:
-    template:
-      spec:
-        volumes:
-          - name: config
-            configMap:
-              name: config-test
-              items:
-                - key: ${PARAM1}
-                  path: config.properties
-        containers:
-          - name: config-test
-            resources:
-              requests:
-                cpu: "0.2"
-                memory: 128Mi
-              limits:
-                cpu: "1.0"
-                memory: 1024Mi
-            volumeMounts:
-              - mountPath: /config
-                name: config
-            env:
-             - name: SPECIAL_KEY
-               valueFrom:
-                   configMapKeyRef:
-                     name: config-test
-                     key: config.properties
-             - name: "AB_OFF"
-               value: "true"
-             - name: "AB_PROMETHEUS_OFF"
-               value: "true"
+spec:
+  template:
+    spec:
+      volumes:
+        - name: config
+          configMap:
+            name: config-test
+            items:
+              - key: ${PARAM1}
+                path: config.properties
+      containers:
+        - name: config-test
+          resources:
+            requests:
+              cpu: "0.2"
+              memory: 128Mi
+            limits:
+              cpu: "1.0"
+              memory: 1024Mi
+          volumeMounts:
+            - mountPath: /config
+              name: config
+          env:
+           - name: SPECIAL_KEY
+             valueFrom:
+                 configMapKeyRef:
+                   name: config-test
+                   key: config.properties
+           - name: "AB_OFF"
+             value: "true"
+           - name: "AB_PROMETHEUS_OFF"
+             value: "true"

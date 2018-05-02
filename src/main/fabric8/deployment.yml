@@ -1,17 +1,3 @@
-kind: "Template"
-apiVersion: "v1"
-metadata:
-  name: "configTest"
-  annotations:
-    openshift.io/display-name: "configTest"
-    description: "configTest"
-
-parameters:
-  - name: "PARAM1"
-    displayName: "param"
-    description: "param"
-    required: true
-
 spec:
   template:
     spec:
@@ -20,7 +6,7 @@ spec:
           configMap:
             name: ${project.artifactId}
             items:
-              - key: ${PARAM1}
+              - key: config.properties
                 path: config.properties
       containers:
         - name: ${project.artifactId}
@@ -35,11 +21,6 @@ spec:
             - mountPath: /config
               name: config
           env:
-           - name: SPECIAL_KEY
-             valueFrom:
-                 configMapKeyRef:
-                   name: ${project.artifactId}
-                   key: config.properties
            - name: "AB_OFF"
              value: "true"
            - name: "AB_PROMETHEUS_OFF"
