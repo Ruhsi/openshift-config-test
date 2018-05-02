@@ -19,7 +19,7 @@ items:
   kind: Service
   metadata:
     annotations:
-      fabric8.io/git-commit: 953174c1c2d0b3a49b69e624cfbd285ae4cfa8ac
+      fabric8.io/git-commit: efb241dc4de2f482a5dcbc7f066d42561d75f6d7
       fabric8.io/iconUrl: img/icons/wildfly.svg
       fabric8.io/git-branch: master
       prometheus.io/scrape: "true"
@@ -52,12 +52,12 @@ items:
     name: config-test
   data:
     config.properties: |
-      incognito.config.zipcode=%zip%
+      incognito.config.zipcode=99999
 - apiVersion: extensions/v1beta1
   kind: Deployment
   metadata:
     annotations:
-      fabric8.io/git-commit: 953174c1c2d0b3a49b69e624cfbd285ae4cfa8ac
+      fabric8.io/git-commit: efb241dc4de2f482a5dcbc7f066d42561d75f6d7
       fabric8.io/iconUrl: img/icons/wildfly.svg
       fabric8.io/git-branch: master
       fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=config-test&var-version=1.0.0-SNAPSHOT
@@ -78,7 +78,7 @@ items:
     template:
       metadata:
         annotations:
-          fabric8.io/git-commit: 953174c1c2d0b3a49b69e624cfbd285ae4cfa8ac
+          fabric8.io/git-commit: efb241dc4de2f482a5dcbc7f066d42561d75f6d7
           fabric8.io/iconUrl: img/icons/wildfly.svg
           fabric8.io/git-branch: master
           fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=config-test&var-version=1.0.0-SNAPSHOT
@@ -89,7 +89,16 @@ items:
           group: at.liwest.esb.config-test
       spec:
         containers:
-        - env:
+        - command:
+          - /bin/sh
+          - cat
+          - /etc/config/path/to/special-key
+          env:
+          - name: SPECIAL_KEY
+            valueFrom:
+              configMapKeyRef:
+                key: config.properties
+                name: config-test
           - name: AB_OFF
             value: "true"
           - name: AB_PROMETHEUS_OFF

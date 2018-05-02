@@ -10,6 +10,7 @@ spec:
                 path: config.properties
       containers:
         - name: config-test
+          command: [ "/bin/sh", "cat", "/etc/config/path/to/special-key" ]
           resources:
             requests:
               cpu: "0.2"
@@ -21,6 +22,11 @@ spec:
             - mountPath: /config
               name: config
           env:
+           - name: SPECIAL_KEY
+             valueFrom:
+                 configMapKeyRef:
+                   name: config-test
+                   key: config.properties
            - name: "AB_OFF"
              value: "true"
            - name: "AB_PROMETHEUS_OFF"
