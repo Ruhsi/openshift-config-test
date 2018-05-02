@@ -10,7 +10,7 @@ spec:
                 path: config.properties
       containers:
         - name: config-test
-          command: [ "/bin/sh", "cat", "/etc/config/path/to/special-key" ]
+          command: [ "/bin/sh", "cat", "config-test" ]
           resources:
             requests:
               cpu: "0.2"
