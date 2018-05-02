@@ -3,7 +3,7 @@ apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
   annotations:
-    fabric8.io/git-commit: f7a11fe866c0e49d1c74780099288517ec29bf09
+    fabric8.io/git-commit: 953174c1c2d0b3a49b69e624cfbd285ae4cfa8ac
     fabric8.io/iconUrl: img/icons/wildfly.svg
     fabric8.io/git-branch: master
     fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=config-test&var-version=1.0.0-SNAPSHOT
@@ -27,7 +27,7 @@ spec:
   template:
     metadata:
       annotations:
-        fabric8.io/git-commit: f7a11fe866c0e49d1c74780099288517ec29bf09
+        fabric8.io/git-commit: 953174c1c2d0b3a49b69e624cfbd285ae4cfa8ac
         fabric8.io/iconUrl: img/icons/wildfly.svg
         fabric8.io/git-branch: master
         fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=config-test&var-version=1.0.0-SNAPSHOT
