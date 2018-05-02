@@ -1,7 +1,19 @@
-kind: ConfigMap
-apiVersion: v1
+kind: "Template"
+apiVersion: "v1"
 metadata:
-  name: "config-test"
-data:
-  config.properties: |
-    incognito.config.zipcode=99999
+  name: config-test
+
+parameters:
+  - name: "ZIPCODE"
+    displayName: "zipcode"
+    description: "zipcode"
+    required: true
+
+objects:
+  - kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: "config-test"
+    data:
+      config.properties: |
+        incognito.config.zipcode=${ZIPCODE}
